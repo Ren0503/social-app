@@ -9,6 +9,7 @@ import { PostsModule } from './posts/posts.module';
 import { TopicsModule } from './topics/topics.module';
 import { UsersModule } from './users/users.module';
 import { VotesModule } from './votes/votes.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { VotesModule } from './votes/votes.module';
     CommentsModule, 
     NotificationsModule, 
     VotesModule, 
-    TopicsModule,
+    TopicsModule, AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
