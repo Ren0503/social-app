@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -11,13 +12,14 @@ import { VotesModule } from './votes/votes.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGO_URL),
     UsersModule, 
     PostsModule, 
     CommentsModule, 
     NotificationsModule, 
     VotesModule, 
-    TopicsModule
+    TopicsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
